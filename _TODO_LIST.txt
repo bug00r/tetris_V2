@@ -1,0 +1,35 @@
+Things i want to do with this Game:
+
+Version 1:
+	- change render method from event based to sheduled one with frame counter(update 60 times per second) 
+	- add animation of line removement(maybe in Version 2 first)(Prio. 2)
+	- add Options UI with all kind of states
+	- More specific Scoring Algorithm(Prio. 3)
+	- cleanup and document code(Prio. 1)
+
+done:
+	- rewrite field draw calculation for start extreme Tetris
+		- here we have to interpolate block_size
+	- Adding simple Sounds
+	- drawing algorithm one time Field and only Stone should be redrawn
+	- smoother controlling with Game State
+	- app_state		//are you in game, or in startscreen or in options
+		- input_state	//input types and so on
+		- game_state	//need input_state What was happened inside of the game like new stone, lines removed, ston moved or rotated, stone was getting fix
+		- ui_state		//need game state and input_state(custom events for animations), will decide which part of ui should be redrawn 
+			- gfx_state
+			- sfx_state
+		
+Version 2:
+	- add usage of customizing Textures
+	- add UI LIB, there is a very good one calls nuklear. Here we have only to add our own drawing methods, rest is managed. TOP!!!
+
+Version 3:
+	- add features like:
+		- rocket, bombs different Stones away
+		- antigravity, for a specific time frame the stone movement slows down
+		- wormhole, you can goto the left and stone reaches the right side and reverse
+
+Version 4(optional but a good idea):
+	- create abstraction layer for ui, sfx and gfx. We want to have regular function and a Framework layer which will do the wohle work
+		- it should be easily to switch
